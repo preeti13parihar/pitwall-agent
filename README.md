@@ -4,6 +4,8 @@
 
 ![PitWall Studio editorial desk and race analysis](docs/pitwall-studio.png)
 
+**Demo video Link:** (https://drive.google.com/file/d/1I4rKyHx2zdzyxZX__qRLXdSm8PD6oy6e/view?usp=sharing)
+
 **Evidence before the edit.** An F1 research producer for sports creators.
 
 A creator submits a race question in Discord or the hosted Studio. PitWall selects the comparison, retrieves historical race evidence, calculates timing differences, checks the premise, and produces a chart, a short reel-script draft, and a caption. It uploads the chart to Google Drive, creates the editorial package in Notion, and sends the completed package back to Discord.
@@ -132,10 +134,6 @@ OpenF1 calls are cached and rate-limited. Source hashes and record counts are at
 Read requests use bounded retry/backoff. Non-idempotent writes are not blindly retried. Drive uses a persisted pre-generated file ID and read-back reconciliation. Notion searches for a run-specific child-page title before creating. An uncertain prior Notion create blocks automatic recreation if the page is not yet visible. Discord uses a nonce and records message IDs; an uncertain send blocks automatic resend. These choices prefer visible partial failure to duplicate artifacts. They are not a claim of distributed exactly-once delivery.
 
 Caution-event filtering does not reconstruct full safety-car intervals; traffic, tyre life, fuel, weather and position remain confounders. Matched-lap averages are descriptive, not clean-air pace or causal estimates. Numerical guardrails check digits in model editorial fields; spelled-out numbers or other semantic mistakes still require review. The run history makes these limitations visible.
-
-## 5. Demo video
-
-**Video link:** updating link.._
 
 ## Data attribution
 
