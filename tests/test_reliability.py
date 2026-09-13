@@ -131,11 +131,22 @@ def test_causal_premise_overrides_model_support(monkeypatch):
     asyncio.run(service.run_job(job))
     assert job['status']=='complete' and job['content']['verdict']=='UNESTABLISHED'
 
-def test_numeric_editorial_hallucination_blocked(monkeypatch):
-    async def model(*args):return {'verdict':'SUPPORTED','assessment':'He lost 99 seconds','hook':'What happened?','fact_ids':['F1','F2','F3'],'closing':'What do you think?'},{}
+@pytest.mark.parametrize('field', ['assessment','hook','closing'])
+def test_numeric_editorial_repaired_without_invented_claim(monkeypatch,field):
+    async def model(*args):
+        draft={'verdict':'SUPPORTED','assessment':'Observed comparison only','hook':'What happened?','fact_ids':['F1','F2','F3'],'closing':'What do you think?'}
+        draft[field]='He lost 99 seconds'
+        return draft,{}
     monkeypatch.setattr(service,'model_json',model)
-    job=prepared_job();job.pop('content');asyncio.run(service.run_job(job))
-    assert job['status']=='failed' and 'numerical' in job['error']
+    job=prepared_job();job.pop('content');job['deliver']=False
+    asyncio.run(service.run_job(job))
+    assert job['status']=='complete'
+    assert '99 seconds' not in job['content']['script']
+    assert '99 seconds' not in job['content']['assessment']
+    assert all(f['text'] in job['content']['script'] for f in job['result']['facts'][:3])
+    assert any('Replaced numerical' in e['detail'] for e in job['events'])
+    if field=='assessment':assert job['content']['verdict']=='UNESTABLISHED'
+
 
 def test_google_tokens_encrypted_at_rest():
     from integrations import save_google,google_tokens

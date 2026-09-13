@@ -94,7 +94,14 @@ async def run_job(job):
             if not isinstance(ids,list) or not 3<=len(ids)<=5 or len(set(ids))!=len(ids) or any(i not in facts for i in ids):raise IntegrationError('Draft referenced invalid evidence IDs.')
             for field in ['assessment','hook','closing']:
                 if not isinstance(draft.get(field),str) or len(draft[field])>700:raise IntegrationError('Invalid editorial text.')
-                if re.search(r'\d',draft[field]):raise IntegrationError('Unverified numerical claim in editorial text; run stopped.')
+                if re.search(r'\d',draft[field]):
+                    draft[field] = {
+                        'assessment': 'Use the measured comparison in the evidence ledger. Timing alone does not establish the cause of a result.',
+                        'hook': 'What does the timing actually tell us?',
+                        'closing': 'What additional evidence would explain this difference?'
+                    }[field]
+                    if field == 'assessment': draft['verdict'] = 'UNESTABLISHED'
+                    event(job, 'Check premise', f'Replaced numerical editorial wording in {field}; calculated evidence retained.')
             if not draft['hook'].endswith('?'):draft['hook']='What does the timing actually tell us?'
             script=draft['hook']+'\n\n'+' '.join(facts[i] for i in ids)+'\n\n'+r['caveat']+'\n\n'+draft['closing']
             job['content']={**draft,'script':script,'caption':draft['hook']+'\n\n'+facts['F3']+'\n\n'+r['caveat']+'\n\n#F1 #Formula1 #RaceAnalysis','estimated_seconds':round(len(script.split())/2.5),'checks':{'fact_references_valid':True,'statistics_from_code':True,'editorial_numbers_blocked':True,'causal_inference_limited':True},'review_note':'Measurements are computed from source data. Hook, premise assessment and closing are AI editorial text and require creator review.'}

@@ -112,7 +112,7 @@ The suite covers:
 - Valid signed Discord ping and rejection of a different channel.
 - Simulated Notion failure after Drive success; reload state and resume without repeating Drive.
 - Simulated Discord failure; never mark full delivery complete.
-- Unknown evidence IDs and invented numerical editorial claims; stop before delivery.
+- Unknown evidence IDs stop delivery; numerical model wording is replaced with conservative text while computed evidence is retained.
 - Conservative causal-claim override.
 - Google credential encryption and invalid OAuth state rejection.
 - Daily run limit.
@@ -133,7 +133,7 @@ OpenF1 calls are cached and rate-limited. Source hashes and record counts are at
 
 Read requests use bounded retry/backoff. Non-idempotent writes are not blindly retried. Drive uses a persisted pre-generated file ID and read-back reconciliation. Notion searches for a run-specific child-page title before creating. An uncertain prior Notion create blocks automatic recreation if the page is not yet visible. Discord uses a nonce and records message IDs; an uncertain send blocks automatic resend. These choices prefer visible partial failure to duplicate artifacts. They are not a claim of distributed exactly-once delivery.
 
-Caution-event filtering does not reconstruct full safety-car intervals; traffic, tyre life, fuel, weather and position remain confounders. Matched-lap averages are descriptive, not clean-air pace or causal estimates. Numerical guardrails check digits in model editorial fields; spelled-out numbers or other semantic mistakes still require review. The run history makes these limitations visible.
+Caution-event filtering does not reconstruct full safety-car intervals; traffic, tyre life, fuel, weather and position remain confounders. Matched-lap averages are descriptive, not clean-air pace or causal estimates. Numerical guardrails replace model editorial fields containing digits with conservative, number-free wording; spelled-out numbers or other semantic mistakes still require review. The run history makes these limitations visible.
 
 ## Data attribution
 
