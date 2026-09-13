@@ -135,7 +135,7 @@ Caution-event filtering does not reconstruct full safety-car intervals; traffic,
 
 ## 5. Demo video
 
-**Video link:** _Add the public or unlisted demo video URL here (maximum two minutes)._
+**Video link:** updating link.._
 
 ## Data attribution
 
