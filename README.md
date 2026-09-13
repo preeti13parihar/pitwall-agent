@@ -1,5 +1,9 @@
 # PitWall
 
+**Website:** [pitwall-studio.onrender.com](https://pitwall-studio.onrender.com/)
+
+![PitWall Studio editorial desk and race analysis](docs/pitwall-studio.png)
+
 **Evidence before the edit.** An F1 research producer for sports creators.
 
 A creator submits a race question in Discord or the hosted Studio. PitWall selects the comparison, retrieves historical race evidence, calculates timing differences, checks the premise, and produces a chart, a short reel-script draft, and a caption. It uploads the chart to Google Drive, creates the editorial package in Notion, and sends the completed package back to Discord.
