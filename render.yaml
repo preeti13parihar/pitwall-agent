@@ -9,7 +9,6 @@ services:
     healthCheckPath: /health
     autoDeployTrigger: commit
     envVars:
-      - fromGroup: pitwall-secrets
       - key: PYTHON_VERSION
         value: 3.12.10
       - key: OPENAI_MODEL
