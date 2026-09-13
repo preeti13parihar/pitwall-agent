@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.db
+*.db-*
+credentials*.json
+token*.json

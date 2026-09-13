@@ -1,0 +1,128 @@
+{
+  "drivers": [
+    44,
+    4
+  ],
+  "names": [
+    "Lewis Hamilton",
+    "Lando Norris"
+  ],
+  "start": 40,
+  "end": 50,
+  "rows": [
+    {
+      "lap": 41,
+      "a": 90.118,
+      "b": 89.733,
+      "delta": 0.385
+    },
+    {
+      "lap": 42,
+      "a": 89.617,
+      "b": 90.006,
+      "delta": -0.389
+    },
+    {
+      "lap": 43,
+      "a": 89.793,
+      "b": 89.262,
+      "delta": 0.531
+    },
+    {
+      "lap": 44,
+      "a": 89.697,
+      "b": 89.752,
+      "delta": -0.055
+    },
+    {
+      "lap": 45,
+      "a": 89.438,
+      "b": 89.635,
+      "delta": -0.197
+    },
+    {
+      "lap": 46,
+      "a": 89.641,
+      "b": 89.96,
+      "delta": -0.319
+    },
+    {
+      "lap": 47,
+      "a": 89.538,
+      "b": 89.838,
+      "delta": -0.3
+    },
+    {
+      "lap": 48,
+      "a": 89.579,
+      "b": 90.556,
+      "delta": -0.977
+    },
+    {
+      "lap": 49,
+      "a": 89.667,
+      "b": 90.515,
+      "delta": -0.848
+    },
+    {
+      "lap": 50,
+      "a": 89.682,
+      "b": 90.544,
+      "delta": -0.862
+    }
+  ],
+  "excluded": [
+    {
+      "lap": 40,
+      "reason": "Pit entry / out-lap"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1",
+      "text": "The comparison covers laps 40\u201350, using 10 valid matched laps and excluding 1 lap.",
+      "source": "laps"
+    },
+    {
+      "id": "F2",
+      "text": "Lewis Hamilton averaged 89.677 seconds per included lap; Lando Norris averaged 89.980 seconds.",
+      "source": "laps"
+    },
+    {
+      "id": "F3",
+      "text": "Lewis Hamilton was quicker by 0.303 seconds per lap on average in this matched sample.",
+      "source": "laps"
+    },
+    {
+      "id": "F4",
+      "text": "The sum of included lap-time differences (first driver minus second) is -3.031 seconds. This is not the race gap.",
+      "source": "laps"
+    }
+  ],
+  "mean_delta": -0.303,
+  "faster": "Lewis Hamilton",
+  "caveat": "These are observed lap-time differences, not proof of why they happened. Tyres, traffic, weather and strategy can confound the comparison. Summed matched-lap deltas are not the on-track race gap.",
+  "stints": [
+    {
+      "meeting_key": 1240,
+      "session_key": 9558,
+      "stint_number": 3,
+      "driver_number": 44,
+      "lap_start": 39,
+      "lap_end": 52,
+      "compound": "SOFT",
+      "tyre_age_at_start": 0
+    },
+    {
+      "meeting_key": 1240,
+      "session_key": 9558,
+      "stint_number": 3,
+      "driver_number": 4,
+      "lap_start": 40,
+      "lap_end": 52,
+      "compound": "SOFT",
+      "tyre_age_at_start": 2
+    }
+  ],
+  "method": "Matched lap numbers; exclude lap 1, missing/invalid/duplicate laps, pit entry and next lap, flagged out-laps, and laps overlapping a caution message. Caution intervals are not fully reconstructed; this is not a clean-air pace estimate."
+}
