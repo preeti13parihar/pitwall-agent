@@ -8,6 +8,10 @@
 
 ![PitWall Studio editorial desk and race analysis](docs/Evidence.png)
 
+![PitWall Studio editorial desk and race analysis](docs/Discord.png)
+
+![PitWall Studio editorial desk and race analysis](docs/Notion.png)
+
 **Demo video Link:** (https://drive.google.com/file/d/1I4rKyHx2zdzyxZX__qRLXdSm8PD6oy6e/view?usp=sharing)
 
 **Evidence before the edit.** An F1 research producer for sports creators.
