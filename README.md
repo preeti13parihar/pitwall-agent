@@ -2,7 +2,7 @@
 
 **Website:** [pitwall-studio.onrender.com](https://pitwall-studio.onrender.com/)
 
-![PitWall Studio editorial desk and race analysis](docs/pitwall-studio.png)
+![PitWall Studio editorial desk and race analysis](docs/pitwall-studio.png)(docs/Chart.png)(docs/Evidence.png)
 
 **Demo video Link:** (https://drive.google.com/file/d/1I4rKyHx2zdzyxZX__qRLXdSm8PD6oy6e/view?usp=sharing)
 
